@@ -18,5 +18,3 @@ class OneNote(models.Model,DateTimeMixin):
         verbose_name = 'income_note'
         verbose_name_plural = 'income_notes'
         ordering = ['-date_in_check']
-
-
