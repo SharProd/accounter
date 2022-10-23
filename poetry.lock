@@ -39,6 +39,18 @@ django = ">=3.0"
 pytz = "*"
 
 [[package]]
+name = "pillow"
+version = "9.2.0"
+description = "Python Imaging Library (Fork)"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-issues (>=3.0.1)", "sphinx-removed-in", "sphinxext-opengraph"]
+tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
+
+[[package]]
 name = "psycopg2-binary"
 version = "2.9.4"
 description = "psycopg2 - Python-PostgreSQL Database Adapter"
@@ -84,7 +96,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "3771a8d3670c500fdd1c09cfd5e213657ad12ed8b99d9635f16eebdc40cfd4f6"
+content-hash = "4f3ba8a647f859612515b7f022032524a7619d7921c64cde7f1d52c078ba960e"
 
 [metadata.files]
 asgiref = [
@@ -93,6 +105,7 @@ asgiref = [
 ]
 django = []
 djangorestframework = []
+pillow = []
 psycopg2-binary = []
 python-dotenv = []
 pytz = []

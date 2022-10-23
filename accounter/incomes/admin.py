@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import OneNote
+from .models import OneNote,Photo
 
 class IncomeNote(admin.ModelAdmin):
     list_display = ('id','user','score','where_from')
@@ -7,3 +7,4 @@ class IncomeNote(admin.ModelAdmin):
 
 
 admin.site.register(OneNote,IncomeNote)
+admin.site.register(Photo)
