@@ -4,7 +4,8 @@ from accounter.mixins import DateTimeMixin
 from django.core.validators import MinValueValidator
 
 
-class IncomesNote(models.Model,DateTimeMixin):
+
+class ExpensesNote(models.Model,DateTimeMixin):
     user = models.ForeignKey(CustomUser,on_delete= models.CASCADE)
     date_in_check = models.DateTimeField()
     score = models.FloatField(validators=[MinValueValidator(0, "Min number value!")])
@@ -15,6 +16,6 @@ class IncomesNote(models.Model,DateTimeMixin):
         return f'{self.pk} - {self.user} - {self.score}'
 
     class Meta:
-        verbose_name = 'income_note'
-        verbose_name_plural = 'income_notes'
+        verbose_name = 'expense_note'
+        verbose_name_plural = 'expense_notes'
         ordering = ['-date_in_check']

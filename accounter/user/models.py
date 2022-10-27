@@ -21,3 +21,16 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+
+class Photo(models.Model):
+    photo = models.ImageField(
+        upload_to="image/expenses/%Y/%m/%d/",
+    )
+
+    def __str__(self):
+        return f"{self.id}, path-{self.photo}"
+
+    class Meta:
+        verbose_name = "photo"
+        verbose_name_plural ="photos"

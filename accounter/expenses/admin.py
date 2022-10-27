@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import IncomesNote
+from .models import ExpensesNote
 
-class IncomesNoteAdmin(admin.ModelAdmin):
+class ExpensesNoteAdmin(admin.ModelAdmin):
     list_display = ('id','user','score','where_from')
     list_display_links = ('id','user','score','where_from')
 
 
-admin.site.register(IncomesNote,IncomesNoteAdmin)
+admin.site.register(ExpensesNote,ExpensesNoteAdmin)
