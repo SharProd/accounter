@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import CustomUser
+from .models import CustomUser,Photo
 
 class CustomUserAdmin(admin.ModelAdmin):
     list_display = ('id','email','first_name','last_name')
@@ -10,3 +10,4 @@ class CustomUserAdmin(admin.ModelAdmin):
     ordering = ('email',)
 
 admin.site.register(CustomUser,CustomUserAdmin)
+admin.site.register(Photo)

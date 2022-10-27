@@ -1,3 +1,21 @@
 from django.db import models
+from user.models import CustomUser, Photo
+from accounter.mixins import DateTimeMixin
+from django.core.validators import MinValueValidator
 
-# Create your models here.
+
+
+class ExpensesNote(models.Model,DateTimeMixin):
+    user = models.ForeignKey(CustomUser,on_delete= models.CASCADE)
+    date_in_check = models.DateTimeField()
+    score = models.FloatField(validators=[MinValueValidator(0, "Min number value!")])
+    photo = models.ManyToManyField(Photo)
+    where_from = models.CharField(max_length=30,null=True)
+
+    def __str__(self):
+        return f'{self.pk} - {self.user} - {self.score}'
+
+    class Meta:
+        verbose_name = 'expense_note'
+        verbose_name_plural = 'expense_notes'
+        ordering = ['-date_in_check']

@@ -5,10 +5,10 @@ services:
     container_name: accounter_db
     volumes:
       - ./data/db:/var/lib/postgresql/data
-    env_file:
-     - .env.dev
-
-
+#    env_file:
+#     - .env.dev
+    environment:
+      POSTGRES_PASSWORD: postgres
     ports:
       - '5432:5432'
     expose:

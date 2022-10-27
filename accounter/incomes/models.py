@@ -1,24 +1,10 @@
 from django.db import models
-from user.models import CustomUser
+from user.models import CustomUser, Photo
 from accounter.mixins import DateTimeMixin
 from django.core.validators import MinValueValidator
 
 
-class Photo(models.Model):
-    photo = models.ImageField(
-        upload_to="image/%Y/%m/%d/",
-    )
-
-    def __str__(self):
-        return f"{self.id}, path-{self.photo}"
-
-    class Meta:
-        verbose_name = "photo"
-        verbose_name_plural ="photos"
-
-
-
-class OneNote(models.Model,DateTimeMixin):
+class IncomesNote(models.Model,DateTimeMixin):
     user = models.ForeignKey(CustomUser,on_delete= models.CASCADE)
     date_in_check = models.DateTimeField()
     score = models.FloatField(validators=[MinValueValidator(0, "Min number value!")])
