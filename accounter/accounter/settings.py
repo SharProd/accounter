@@ -89,7 +89,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+# DATE_FORMAT = ( ( 'Y-m-d' ))
+# DATE_INPUT_FORMATS = ( ('%Y-%m-%d'),)
+# DATETIME_FORMAT = (( 'Y-m-d H:i' ))
+# DATETIME_INPUT_FORMATS = (('%Y-%m-%d %H:%i'),)
 
 LANGUAGE_CODE = 'en-us'
 
